@@ -7,13 +7,15 @@
 // @todo: Функция удаления карточки
 
 // @todo: Вывести карточки на страницу
+const cardTemplate = document.querySelector('#card-template'); 
 
 function createCard(cardData, deleteCallback) {
-  const cardTemplate = document.querySelector('#card-template'); 
+  
   const cardElement = cardTemplate.content.querySelector('.places__item').cloneNode(true); 
 
   const cardImage = cardElement.querySelector('.card__image'); 
-  cardImage.src = cardData.link; 
+  cardImage.src = cardData.link;
+  cardImage.alt = cardData.name; 
 
   const cardTitle = cardElement.querySelector('.card__title'); 
   cardTitle.textContent = cardData.name; 
